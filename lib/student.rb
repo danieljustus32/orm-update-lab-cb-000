@@ -53,6 +53,16 @@ class Student
     self.create(row[1], row[2])
   end
 
+  def self.find_by_name(name)
+    sql = <<-SQL
+    SELECT *
+    FROM students
+    WHERE NAME = ?
+    SQL
+
+    DB[:conn].execute(sql, name)
+  end
+  
   def update
     sql = <<-SQL
     UPDATE students
