@@ -43,8 +43,8 @@ class Student
     end
   end
 
-  def self.create(name, grade)
-    student = self.new(name, grade)
+  def self.create(name, grade, id = nil)
+    student = self.new(name, grade, id = nil)
     student.save
     student
   end
